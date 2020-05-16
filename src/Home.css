@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
 }
-.homebtns{
+.homebtns, .loginbtns{
     height: 30%;
     display: flex;
     align-items: center;
@@ -16,7 +16,17 @@
 }
 .homebtns .sign{
     width: 20%;
+    font-size: 5em;
 }
+.loginbtns .sign{
+  width: 45%;
+  font-size: 4em;
+  text-transform: initial;
+}
+.loginbtns span{
+  margin-left: 20px;
+}
+
 .pic{
     background-image: url('/aces.png');
     height:100%;
@@ -28,7 +38,7 @@
 
 @font-face {
     font-family: Clip;
-    src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+    src: url("/font.ttf");
   }
   
   body {
@@ -53,12 +63,13 @@
     letter-spacing: 2;
     font-family: "Clip";
     text-transform: uppercase;
-    font-size: 6em;
+    font-size: 7em;
     color: #ffe6ff;
     text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
       -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
       0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
     animation: shine 2s forwards, flicker 3s infinite;
+    cursor: pointer;
   }
   
   @keyframes blink {
