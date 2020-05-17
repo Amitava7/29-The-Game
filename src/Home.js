@@ -16,7 +16,7 @@ function Home(props) {
         
           {
           true ?
-          <div class="loginbtns" onClick={()=>window.location="/api/test"}>
+          <div class="loginbtns" onClick={()=>window.location="/api/login/google"}>
             <div class="sign" >
               Sign in with  < span class="fast-flicker"> Google</span>
             </div> 
