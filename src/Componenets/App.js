@@ -1,6 +1,8 @@
 import React ,{useState} from 'react';
 import './App.css';
 import Card from './Card'
+import { connect } from 'react-redux';
+import * as actions from '../Actions';
 
 function App() {
   let cards = [{suit:'H', rank:'A'},
@@ -13,7 +15,6 @@ function App() {
   let initialValue = new Array(8).fill(false);
   const [clicks, setClicks] = useState(initialValue);  
   function click(i){
-    console.log("cghvjgkhgv",i);
     let newClicks = new Array(8).fill(false);
     newClicks[i]=true;
     setClicks(newClicks);
@@ -44,4 +45,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(null, actions)(App) ;

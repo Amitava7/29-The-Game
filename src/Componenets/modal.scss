@@ -1,0 +1,169 @@
+.modal> div{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: grey;
+    background: #130f0fc4;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-modal{
+    height: fit-content;
+    width: 30%;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 5px;
+}
+
+.join-modal{
+     input {
+        line-height: 30px;
+        font-size: 2vw;
+        background: black;
+        text-align: center;
+     }
+    .sign{
+        animation: none;
+        cursor: text;
+        text-shadow: none;
+    }
+}
+.join-modal .sign{
+    font-size: 4vw;
+}
+.modal-close{
+    position: absolute;
+    right: 0;
+    transform: scale(.4);
+}
+@mixin transition() {
+    transition: all .4s cubic-bezier(.215,.61,.355,1);
+}
+
+.modal-close {
+  a {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-right: -50px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    opacity: 1;
+    @include transition();
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(247,149,29,0.5);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(247,149,29,0.5);
+    box-shadow: 0px 0px 30px 0px rgba(247,149,29,0.5);
+    
+    & > span {
+      background-color: #e70fb9;
+      display: block;
+      height: 12px;
+      border-radius: 6px;
+      position: relative;
+      @include transition();
+      position: absolute;
+      top: 50%;
+      margin-top: -6px;
+      left: 18px;
+      width: 64px;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -moz-justify-content: space-between;
+      -ms-justify-content: space-between;
+
+      span {
+        display: block;
+        background-color: #000;
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
+        @include transition();
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &.left {
+        transform: rotate(45deg);
+        transform-origin: center;
+
+        .circle-left {
+          @include transition();
+          margin-left: 0;
+        }
+
+        .circle-right {
+          @include transition();
+          margin-left: 52px;
+        }
+      }
+
+      &.right {
+        transform: rotate(-45deg);
+        transform-origin: center;
+
+        .circle-left {
+          @include transition();
+          margin-left: 0;
+        }
+
+        .circle-right {
+          @include transition();
+          margin-left: 52px;
+        }
+      }
+    }
+
+    &:hover {
+      & > span {
+        background-color: #cf3232;
+        @include transition();
+
+        span {
+          @include transition();
+          background-color: #0f0f0f;
+        }
+
+        &.left {
+
+          .circle-left {
+            @include transition();
+            margin-left: 52px;
+          }
+
+          .circle-right {
+            @include transition();
+            margin-left: 0;
+          }
+        }
+
+        &.right {
+
+          .circle-left {
+            @include transition();
+            margin-left: 52px;
+          }
+
+          .circle-right {
+            @include transition();
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+}
