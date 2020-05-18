@@ -17,8 +17,8 @@ const store = createStore(reducers,{},compose(
 const routing = (
   <Router>
     <div>
-      <Route path="/" exact component={App} />
-      <Route path="/home" component={Home} />
+      <Route path="/" exact component={Home} />
+      <Route path="/Game" component={App} />
     </div>
   </Router>
 )
