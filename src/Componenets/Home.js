@@ -11,7 +11,7 @@ function Home(props) {
   useEffect(()=>{
     axios.get('/api/user')
     .then(res => {
-      const person = res.name;
+      const person = res.data.name;
       setUser(person);
     })
   },[]);
@@ -21,7 +21,7 @@ function Home(props) {
             <Modal>
                 <div class='join-modal'>
                   <input class='sign' type='text' placeholder='Enter room id'  onChange={e=> setRoomId(e.target.value)}/>
-                  <div class='sign' onClick={()=>window.location="/api/room?id="+roomId}>Join</div>
+                  <div class='sign' onClick={()=>window.location="/room?id="+roomId}>Join</div>
                 <div 
                     className="modal-close"
                     onClick={()=>setModal(false)}>

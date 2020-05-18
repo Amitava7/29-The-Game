@@ -1,10 +1,11 @@
-import React ,{useState} from 'react';
+import React ,{useState, useEffect} from 'react';
 import './App.css';
+import axios from 'axios'; 
 import Card from './Card'
 import { connect } from 'react-redux';
 import * as actions from '../Actions';
 
-function App() {
+function App(props) {
   let cards = [{suit:'H', rank:'A'},
   {suit:'H', rank:'K'},
   {suit:'D', rank:'Q'},
@@ -23,6 +24,13 @@ function App() {
     <Card key={i}  rank={card.rank} suit={card.suit}/> 
     </div>);
   const backs = cards.map((card,i)=> <Card key={i} back={true}/>); 
+  useEffect(()=>{
+    let roomId = props.location.search.split('=')[1];
+    axios.get('/api/room'+roomId)
+    .then(res => {
+      console.log(res.data);
+    });
+  },[]);
   return (
     <div className="App">
       <header className="App-header">
@@ -45,4 +53,4 @@ function App() {
   );
 }
 
-export default connect(null, actions)(App) ;
+export default App;
