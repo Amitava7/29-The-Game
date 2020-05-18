@@ -5,20 +5,14 @@ import Modal from './Modal';
 function Home(props) {
  
   const [showModal,setModal] = useState(false);
-  const [roomId, setRoomId] = useState('990');
-  let click =e=>{
-    debugger
-    console.log(e.target.value);
-    setRoomId(e.target.value);
-  }
-
+  const [roomId, setRoomId] = useState('');
   return (
   <div className="home">
-
+{ showModal ?
                   <Modal>
                      <div class='join-modal'>
-                       <input class='sign' type='text' placeholder='Enter room id'  onChange={click}/>
-                       <div class='sign' onClick={()=>window.location="/api/room?id="}>Join</div>
+                       <input class='sign' type='text' placeholder='Enter room id'  onChange={e=> setRoomId(e.target.value)}/>
+                       <div class='sign' onClick={()=>window.location="/api/room?id="+roomId}>Join</div>
                       <div 
                           className="modal-close"
                           onClick={()=>setModal(false)}>
@@ -34,8 +28,8 @@ function Home(props) {
                           </a>
                       </div>
                      </div>
-                  </Modal>
-            
+                  </Modal> :null
+}           
         <div class='title'>
           <div class="pic"></div>
           <div class="sign" >
