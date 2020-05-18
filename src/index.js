@@ -18,7 +18,7 @@ const routing = (
   <Router>
     <div>
       <Route path="/" exact component={Home} />
-      <Route path="/Game" component={App} />
+      <Route path="/room" component={App} />
     </div>
   </Router>
 )

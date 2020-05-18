@@ -28,7 +28,7 @@ function App() {
       <header className="App-header">
           TWINTYNINE the game
       </header>
-      <img class="table" src="/table.png"/>
+
       <div class="deck" >
         {CardsToDisplay}
       </div>

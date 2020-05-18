@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: green;
+  background-image: url('/bg3.jpg');
   height: 100vh;
 }
 
@@ -19,7 +19,7 @@
   position: absolute;
     top: 25%;
     left: 40%;
-    animation: App-logo-spin 5s linear infinite;
+    border-radius: 20px; 
 }
 .go{
   position: absolute;
@@ -79,11 +79,3 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
